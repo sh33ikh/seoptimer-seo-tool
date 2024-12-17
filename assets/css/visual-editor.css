@@ -1,0 +1,74 @@
+#visual-editor {
+    display: flex;
+    height: calc(100vh - 120px);
+}
+
+.editor-sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+}
+
+..element-list {
+    margin-top: 1rem;
+}
+
+.element {
+    background-color: #fff;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 3px;
+    cursor: move;
+    transition: background-color 0.3s ease;
+}
+
+.element:hover {
+    background-color: #e0e0e0;
+}
+
+.editor-main {
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.editor-canvas {
+    min-height: 100%;
+    border: 2px dashed #ddd;
+    padding: 1rem;
+}
+
+.placeholder {
+    color: #999;
+    text-align: center;
+    padding: 2rem;
+}
+
+.editor-properties {
+    width: 300px;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-left: 1px solid #ddd;
+}
+
+#element-properties {
+    margin-top: 1rem;
+}
+
+.property-group {
+    margin-bottom: 1rem;
+}
+
+.property-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.property-group input,
+.property-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
