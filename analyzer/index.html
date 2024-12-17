@@ -4,112 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Analyze your website's SEO performance with SEOptimer's advanced SEO Analyzer tool.">
-    <meta name="keywords" content="SEO Analyzer, SEO audit, SEO analysis, website SEO check, SEO performance">
+    <meta name="description" content="Analyze your website's SEO performance and get actionable recommendations to improve your website's search engine rankings.">
+    <meta name="keywords" content="SEO Analyzer, website SEO check, SEO audit, SEO analysis, SEO performance">
     <meta name="author" content="sh33ikh">
     <meta property="og:title" content="SEO Analyzer - SEOptimer">
-    <meta property="og:description" content="Analyze your website's SEO performance and get actionable recommendations to optimize your site.">
+    <meta property="og:description" content="Analyze your website's SEO performance with actionable insights to improve search engine rankings.">
     <meta property="og:image" content="assets/preview-image.png">
     <meta property="og:url" content="https://sh33ikh.github.io/seoptimer-seo-tool/Analyzer/index.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SEO Analyzer - SEOptimer">
-    <meta name="twitter:description" content="Analyze your website's SEO performance and improve it with SEOptimer's advanced SEO analyzer tool.">
+    <meta name="twitter:description" content="Get advanced SEO analysis and suggestions to improve your website's search engine rankings.">
     <meta name="twitter:image" content="assets/preview-image.png">
     <title>SEO Analyzer - SEOptimer</title>
+
+    <!-- External CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6vB5eA6W6/0KYJjPexxZ8XMqF1mFto2zX9f3LlS5Q1u9jl44T0ho6reWLf" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- External JS Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-7ZdQ8Gvb3VDEhv3nsd2WyfmtnzP25uQw/xWTXfph3XMwCTd9tdrZ2gFXtLbdXKf8" crossorigin="anonymous"></script>
+
     <script src="scripts.js" defer></script>
 </head>
 
 <body>
-    <header>
+    <header class="bg-dark text-white text-center py-3">
         <h1>SEO Analyzer</h1>
-        <p>Analyze your website's SEO performance and improve its search engine visibility with SEOptimer's advanced analyzer tool.</p>
+        <p>Analyze your website's SEO performance and improve your search engine rankings with SEOptimer's advanced tool.</p>
     </header>
 
-    <section class="container">
-        <label for="url">Enter Website URL:</label>
-        <input type="url" id="url" placeholder="https://example.com" required />
-        <button onclick="analyzeSEO()">Analyze SEO</button>
-    </section>
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <label for="url" class="form-label">Enter Website URL:</label>
+                <input type="url" class="form-control" id="url" placeholder="https://example.com" required />
+                <button class="btn btn-primary mt-3 w-100" onclick="analyzeSEO()">Analyze SEO</button>
+            </div>
+        </div>
+    </div>
 
-    <section id="results">
-        <h2>SEO Analysis Results</h2>
-        <div id="missing-tags">
+    <div id="results" class="container">
+        <h2 class="my-4">SEO Analysis Results</h2>
+        <div id="missing-tags" class="mb-4">
             <h3>Missing SEO Elements</h3>
-            <ul id="missing-tags-list"></ul>
+            <ul id="missing-tags-list" class="list-group"></ul>
         </div>
 
-        <div id="error-log">
+        <div id="error-log" class="mb-4">
             <h3>Errors and Warnings</h3>
-            <ul id="error-log-list"></ul>
+            <ul id="error-log-list" class="list-group"></ul>
         </div>
 
-        <div id="suggestions">
+        <div id="suggestions" class="mb-4">
             <h3>Suggested Improvements</h3>
-            <ul id="suggestions-list"></ul>
+            <ul id="suggestions-list" class="list-group"></ul>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>Powered by <a href="https://t.me/RektDevelopers" target="_blank">RektDevelopers</a></p>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>Powered by <a href="https://t.me/RektDevelopers" class="text-white" target="_blank">RektDevelopers</a></p>
     </footer>
 
-    <script>
-        async function analyzeSEO() {
-            const url = document.getElementById('url').value;
-            if (!url) {
-                alert('Please enter a valid URL');
-                return;
-            }
-
-            // Clear previous results
-            document.getElementById('missing-tags-list').innerHTML = '';
-            document.getElementById('error-log-list').innerHTML = '';
-            document.getElementById('suggestions-list').innerHTML = '';
-
-            try {
-                const response = await fetch(`https://api.seoptimer.com/analyze?url=${url}`);
-                const data = await response.json();
-
-                if (data.status === 'success') {
-                    displayResults(data);
-                } else {
-                    alert('Failed to fetch SEO data.');
-                }
-            } catch (error) {
-                alert('Error fetching SEO data. Please try again.');
-            }
-        }
-
-        function displayResults(data) {
-            // Display missing elements
-            const missingTags = data.missingTags || [];
-            const missingTagsList = document.getElementById('missing-tags-list');
-            missingTags.forEach(tag => {
-                const listItem = document.createElement('li');
-                listItem.textContent = tag;
-                missingTagsList.appendChild(listItem);
-            });
-
-            // Display errors and warnings
-            const errorLog = data.errors || [];
-            const errorLogList = document.getElementById('error-log-list');
-            errorLog.forEach(error => {
-                const listItem = document.createElement('li');
-                listItem.textContent = error;
-                errorLogList.appendChild(listItem);
-            });
-
-            // Display suggestions
-            const suggestions = data.suggestions || [];
-            const suggestionsList = document.getElementById('suggestions-list');
-            suggestions.forEach(suggestion => {
-                const listItem = document.createElement('li');
-                listItem.textContent = suggestion;
-                suggestionsList.appendChild(listItem);
-            });
-        }
-    </script>
 </body>
 
 </html>
