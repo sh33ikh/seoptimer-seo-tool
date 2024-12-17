@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate SEO meta tags to optimize your website for search engines. Improve SEO ranking with customized meta tags for title, description, and keywords.">
+    <meta name="keywords" content="SEO meta tags generator, SEO optimization, SEO tool, meta tags generator">
+    <meta name="author" content="sh33ikh">
+    <meta property="og:title" content="SEO Meta Tag Generator - SEOptimer">
+    <meta property="og:description" content="Generate SEO-friendly meta tags for your website with SEOptimer's advanced SEO meta tag generator tool.">
+    <meta property="og:image" content="assets/preview-image.png">
+    <meta property="og:url" content="https://sh33ikh.github.io/seoptimer-seo-tool/seo-generator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO Meta Tag Generator - SEOptimer">
+    <meta name="twitter:description" content="Generate SEO-friendly meta tags for your website to boost your SEO ranking.">
+    <meta name="twitter:image" content="assets/preview-image.png">
+
+    <title>SEO Meta Tag Generator - SEOptimer</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "SEO Meta Tag Generator",
+            "url": "https://sh33ikh.github.io/seoptimer-seo-tool/seo-generator.html",
+            "description": "Generate SEO-friendly meta tags for your website with SEOptimer.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "SEOptimer"
+            }
+        }
+    </script>
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>SEO Meta Tag Generator</h1>
+        <p>Optimize your website's SEO by generating SEO-friendly meta tags.</p>
+    </header>
+
+    <div class="container">
+        <label for="title">Page Title:</label>
+        <input type="text" id="title" placeholder="Enter your page title" />
+
+        <label for="description">Meta Description:</label>
+        <input type="text" id="description" placeholder="Enter your meta description" />
+
+        <label for="keywords">Meta Keywords:</label>
+        <input type="text" id="keywords" placeholder="Enter your meta keywords" />
+
+        <button onclick="generateMetaTags()">Generate Meta Tags</button>
+    </div>
+
+    <footer>
+        <p>Powered by <a href="https://t.me/RektDevelopers" target="_blank">RektDevelopers</a></p>
+    </footer>
+
+    <script>
+        function generateMetaTags() {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const keywords = document.getElementById("keywords").value;
+
+            const result = `
+                <meta name="title" content="${title}">
+                <meta name="description" content="${description}">
+                <meta name="keywords" content="${keywords}">
+            `;
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+
+</html>
