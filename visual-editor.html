@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Editor - WebDevMaster</title>
+    <meta name="description" content="Create stunning websites with WebDevMaster's intuitive drag-and-drop visual editor.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/visual-editor.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">WebDevMaster</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tools">Tools</a></li>
+                <li><a href="https://github.com/webdevmaster/platform" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="visual-editor">
+        <div class="editor-sidebar">
+            <h2>Elements</h2>
+            <div class="element-list">
+                <div class="element" draggable="true" data-element="heading">Heading</div>
+                <div class="element" draggable="true" data-element="paragraph">Paragraph</div>
+                <div class="element" draggable="true" data-element="image">Image</div>
+                <div class="element" draggable="true" data-element="button">Button</div>
+                <div class="element" draggable="true" data-element="list">List</div>
+            </div>
+        </div>
+        <div class="editor-main">
+            <div id="editor-canvas" class="editor-canvas">
+                <div class="placeholder">Drag and drop elements here</div>
+            </div>
+        </div>
+        <div class="editor-properties">
+            <h2>Properties</h2>
+            <div id="element-properties"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 WebDevMaster. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/visual-editor.js"></script>
+</body>
+</html>
+
