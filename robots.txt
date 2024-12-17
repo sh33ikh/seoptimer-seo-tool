@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Sitemap: https://sh33ikh.github.io/seoptimer-seo-tool/sitemap.xml
+
