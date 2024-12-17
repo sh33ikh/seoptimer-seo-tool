@@ -31,7 +31,7 @@
         <section class="hero">
             <h1>SEOptimer: AI-Powered SEO Audit & Optimization Tool</h1>
             <p>Elevate your website's search engine performance with our advanced AI-driven SEO analysis and reporting.</p>
-            <a href="#" class="cta-button">Start Free SEO Audit</a>
+            <a href="#seo-audit-form" class="cta-button">Start Free SEO Audit</a>
         </section>
 
         <section class="features">
@@ -70,16 +70,31 @@
             </div>
         </section>
 
-        <section class="cta">
-            <h2>Ready to skyrocket your SEO performance?</h2>
-            <a href="#" class="cta-button">Start Your Free Trial</a>
+        <section id="seo-audit-form" class="seo-audit-section">
+            <h2>Free SEO Audit</h2>
+            <form id="seo-audit-tool">
+                <input type="url" id="website-url" name="website-url" placeholder="Enter your website URL" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit" class="cta-button">Run SEO Audit</button>
+            </form>
+            <div id="audit-results" style="display: none;">
+                <h3>SEO Audit Results</h3>
+                <div id="results-content"></div>
+                <button id="download-pdf" class="cta-button">Download PDF Report</button>
+            </div>
         </section>
 
-        <section id="seo-audit-form"></section>
+        <section class="cta">
+            <h2>Ready to skyrocket your SEO performance?</h2>
+            <a href="signup.html" class="cta-button">Start Your Free Trial</a>
+        </section>
     </main>
 
     <footer id="footer"></footer>
 
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/seo-audit.js"></script>
+    <script src="assets/js/report-generator.js"></script>
 </body>
 </html>
+
