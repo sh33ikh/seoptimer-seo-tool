@@ -1,0 +1,60 @@
+<form id="seo-audit-form">
+    <h2>Free SEO Audit</h2>
+    <input type="url" id="website-url" name="website-url" placeholder="Enter your website URL" required>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    <button type="submit">Run SEO Audit</button>
+</form>
+
+<div id="audit-results" style="display: none;">
+    <h3>SEO Audit Results</h3>
+    <div id="results-content"></div>
+</div>
+
+<script>
+document.getElementById('seo-audit-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const url = document.getElementById('website-url').value;
+    const email = document.getElementById('email').value;
+    
+    // Here you would typically send this data to your backend API
+    // For this example, we'll just simulate a response
+    simulateAudit(url, email);
+});
+
+function simulateAudit(url, email) {
+    // Simulate API call delay
+    setTimeout(() => {
+        const results = {
+            score: 75,
+            issues: [
+                "Missing meta description",
+                "Slow page load time",
+                "Not mobile-friendly"
+            ],
+            recommendations: [
+                "Add a clear and concise meta description",
+                "Optimize images and minimize CSS/JS",
+                "Implement responsive design"
+            ]
+        };
+        displayResults(results);
+    }, 2000);
+}
+
+function displayResults(results) {
+    const resultsDiv = document.getElementById('results-content');
+    resultsDiv.innerHTML = `
+        <p>Overall SEO Score: ${results.score}/100</p>
+        <h4>Issues Found:</h4>
+        <ul>
+            ${results.issues.map(issue => `<li>${issue}</li>`).join('')}
+        </ul>
+        <h4>Recommendations:</h4>
+        <ul>
+            ${results.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+        </ul>
+    `;
+    document.getElementById('audit-results').style.display = 'block';
+}
+</script>
+
