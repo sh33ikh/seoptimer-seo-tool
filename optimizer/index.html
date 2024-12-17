@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Optimize your website's SEO with SEOptimer's advanced SEO optimization tool.">
+    <meta name="keywords" content="SEO optimization, SEO tool, website SEO, SEO performance, meta tags optimization">
+    <meta name="author" content="sh33ikh">
+    <meta property="og:title" content="SEO Optimizer - SEOptimer">
+    <meta property="og:description" content="Optimize your website's SEO to increase search engine ranking and visibility.">
+    <meta property="og:image" content="assets/preview-image.png">
+    <meta property="og:url" content="https://sh33ikh.github.io/seoptimer-seo-tool/Optimizer/index.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO Optimizer - SEOptimer">
+    <meta name="twitter:description" content="Optimize your website’s SEO with SEOptimer’s advanced SEO optimization tool.">
+    <meta name="twitter:image" content="assets/preview-image.png">
+    <title>SEO Optimizer - SEOptimer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>SEO Optimizer</h1>
+        <p>Improve your website's SEO with SEOptimer’s optimization tool by adding or modifying meta tags, descriptions, keywords, and more.</p>
+    </header>
+
+    <section class="container">
+        <label for="title">Meta Title:</label>
+        <input type="text" id="title" placeholder="Enter your meta title" />
+
+        <label for="description">Meta Description:</label>
+        <input type="text" id="description" placeholder="Enter your meta description" />
+
+        <label for="keywords">Meta Keywords:</label>
+        <input type="text" id="keywords" placeholder="Enter your meta keywords" />
+
+        <label for="alt-text">Image Alt Text:</label>
+        <input type="text" id="alt-text" placeholder="Enter alt text for your images" />
+
+        <button onclick="optimizeSEO()">Optimize SEO</button>
+    </section>
+
+    <section id="preview">
+        <h2>SEO Preview</h2>
+        <div>
+            <strong>Title:</strong> <span id="preview-title"></span><br />
+            <strong>Description:</strong> <span id="preview-description"></span><br />
+            <strong>Keywords:</strong> <span id="preview-keywords"></span><br />
+            <strong>Image Alt Text:</strong> <span id="preview-alt-text"></span><br />
+        </div>
+    </section>
+
+    <footer>
+        <p>Powered by <a href="https://t.me/RektDevelopers" target="_blank">RektDevelopers</a></p>
+    </footer>
+
+    <script>
+        function optimizeSEO() {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const keywords = document.getElementById("keywords").value;
+            const altText = document.getElementById("alt-text").value;
+
+            document.getElementById("preview-title").textContent = title || "N/A";
+            document.getElementById("preview-description").textContent = description || "N/A";
+            document.getElementById("preview-keywords").textContent = keywords || "N/A";
+            document.getElementById("preview-alt-text").textContent = altText || "N/A";
+
+            alert('SEO Optimized! You can now update these values in your site.');
+        }
+    </script>
+</body>
+
+</html>
